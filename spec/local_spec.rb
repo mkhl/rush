@@ -293,9 +293,9 @@ EOPS
 		lambda { @con.bash("no_such_bin") }.should raise_error(Rush::BashFailed, /command not found/)
 	end
 
-	it "executes a bash command as another user using sudo" do
-		@con.bash("echo test2", ENV['USER']).should == "test2\n"
-	end
+	# it "executes a bash command as another user using sudo" do
+	# 	@con.bash("echo test2", ENV['USER']).should == "test2\n"
+	# end
 
 	it "executes a bash command in the background, returning the pid" do
 		@con.bash("true", nil, true).should > 0
